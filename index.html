@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lena Babu - AI & Data Science Engineer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: hsl(195, 84%, 55%);
+            --secondary-color: linear-gradient(135deg, #070911 0%, #27024b 100%);
+            --dark-color: #7bb4ec;
+            --light-color: #7f3030;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #f2eded;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(13, 13, 13, 0.9) !important;
+            transition: all 0.3s ease;
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #288fee !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #070911 0%, #27024b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #1a7bc4;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(44, 152, 240, 0.3);
+        }
+
+        .btn-outline-white {
+            border: 2px solid white;
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-white:hover {
+            background: white;
+            color: var(--dark-color);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #070911 0%, #27024b 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #1185c4;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--secondary-color);
+        }
+
+        .about-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-info li {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .about-info li span:first-child {
+            font-weight: 600;
+            min-width: 120px;
+            color: var(--primary-color);
+        }
+
+        .about-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .about-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Section */
+        .skill-item {
+            margin-bottom: 30px;
+        }
+
+        .skill-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #070911 0%, #27024b 100%);
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(45deg, var(--primary-color), #091723);
+            transition: width 2s ease-in-out;
+        }
+
+        /* Projects Section */
+        .project-card {
+            background:linear-gradient(135deg, #070911 0%, #27024b 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(237, 46, 13, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(230, 102, 102, 0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-card-body {
+            padding: 25px;
+        }
+
+        .project-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .project-card p {
+            color: #f2f2f2;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .service-card {
+            background: linear-gradient(135deg, #070911 0%, #27024b 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(11, 18, 107, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--secondary-color);
+        }
+
+        .contact-info {
+            background:linear-gradient(135deg, #070911 0%, #27024b 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(227, 5, 5, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-info h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-control {
+            border: 2px solid #34699d;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(44, 152, 240, 0.25);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Lena Babu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Side: Text Content -->
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1>I'm <span style="color: var(--primary-color);">Lena Babu</span></h1>
+                    <h2>AI & Data Science Engineer</h2>
+                    <p>Passionate about creating innovative AI solutions and developing cutting-edge applications through machine learning, data science, and software development.</p>
+                    <div>
+                        <a href="#contact" class="btn btn-primary mr-3">Hire Me</a>
+                        <a href="#projects" class="btn btn-outline-white">View Projects</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Profile Image -->
+            <div class="col-lg-6 text-center">
+                <img src="images/bg_1.png"  alt="Lena Babu" class="img-fluid" style="max-width: 600px; object-fit: cover; margin-top: 109px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+                <p>Learn more about my background, education, and passion for AI and technology</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h3>AI & Data Science Engineering Student</h3>
+                        <p>I am a passionate and driven AI and Data Science engineering student with a strong foundation in machine learning, deep learning, and software development. Proficient in Python, C, Java, Flutter, and R, with hands-on experience in developing AI-powered applications and mobile solutions.</p>
+                        
+                        <ul class="about-info">
+                            <li><span>Name:</span> <span>Lena Babu</span></li>
+                            <li><span>College:</span> <span>MES College of Engineering</span></li>
+                            <li><span>Course:</span> <span>B.TECH AI & Data Science</span></li>
+                            <li><span>Location:</span> <span>Thrissur, Kerala, India</span></li>
+                            <li><span>Email:</span> <span><a href="mailto:lenababu777@gmail.com">lenababu777@gmail.com</a></span></li>
+                            <li><span>Phone:</span> <span><a href="tel:+918078824299">+91 8078824299</a></span></li>
+                            <li><span>LinkedIn:</span> <span><a href="https://www.linkedin.com/in/lenababu" target="_blank">linkedin.com/in/lenababu</a></span></li>
+							<li><span>LinkedIn:</span> <span><a href=" https://github.com/lenababu " target="_blank">github.com/lenababu </a></span></li>
+                        </ul>
+                        
+                        <div class="mt-4">
+                            <a href="assets/Lena_babu_CV.pdf" class="btn btn-primary" download>Download CV</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-stats">
+                        <div class="row">
+                            <div class="col-6 mb-4">
+                                <div class="stat-card text-center">
+                                    <h3 class="stat-number">3+</h3>
+                                    <p>Major Projects</p>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-4">
+                                <div class="stat-card text-center">
+                                    <h3 class="stat-number">10+</h3>
+                                    <p>Certifications</p>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-4">
+                                <div class="stat-card text-center">
+                                    <h3 class="stat-number">6+</h3>
+                                    <p>Programming Languages</p>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-4">
+                                <div class="stat-card text-center">
+                                    <h3 class="stat-number">8+</h3>
+                                    <p>AI/ML Tools</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+                <p>Technical expertise in AI, Machine Learning, and Software Development</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <h4>Python</h4>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Machine Learning & AI</h4>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-item">
+                        <h4>TensorFlow & PyTorch</h4>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skill-item">
+                        <h4>Flutter & Mobile Development</h4>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Java, C & R</h4>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-item">
+                        <h4>OpenCV & Computer Vision</h4>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Services</h2>
+                <p>Specialized services in AI, Machine Learning, and Software Development</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>AI & Machine Learning</h4>
+                        <p>Developing intelligent systems using advanced machine learning algorithms and AI technologies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4>Computer Vision</h4>
+                        <p>Creating vision-based applications using OpenCV and deep learning for image processing.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Mobile App Development</h4>
+                        <p>Building cross-platform mobile applications using Flutter and modern development practices.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Data Science</h4>
+                        <p>Analyzing complex datasets to extract meaningful insights and drive data-driven decisions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p>Creating responsive and modern web applications using latest technologies and frameworks.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>UI/UX Design</h4>
+                        <p>Designing intuitive and user-friendly interfaces with focus on user experience and aesthetics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Projects</h2>
+                <p>Innovative AI and software development projects showcasing technical expertise</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-card-body">
+                            <h4>Auto Rickshaw Booking App</h4>
+                            <p>A comprehensive mobile application for booking auto rickshaws with real-time tracking and payment integration.</p>
+                            <div class="project-tech">Flutter & Firebase | 2024-Present</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-card-body">
+                            <h4>Theatre Anti-Piracy AI Camera Detection</h4>
+                            <p>AI-powered system to detect unauthorized recording devices in movie theaters using computer vision.</p>
+                            <div class="project-tech">Python, OpenCV, Machine Learning | 2023</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-card-body">
+                            <h4>Key Cutting Shop Management System</h4>
+                            <p>Complete management system for key cutting shops with inventory tracking and customer management.</p>
+                            <div class="project-tech">Java, MySQL, Spring Boot | 2024</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-card-body">
+                            <h4>Stock Management AI</h4>
+                            <p>AI-driven stock management system with predictive analytics for inventory optimization.</p>
+                            <div class="project-tech">LSTM, Flask, React, Time-Series Forecasting</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-card-body">
+                            <h4>AI Hackathon Projects</h4>
+                            <p>Various AI and machine learning projects developed during hackathons and competitions.</p>
+                            <div class="project-tech">Python, TensorFlow, OpenCV</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-card-body">
+                            <h4>UI/UX Design Projects</h4>
+                            <p>Collection of user interface and user experience design projects for various applications.</p>
+                            <div class="project-tech">Figma Design & Prototyping</div>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-4 col-md-6">
+                    <div class="project-card">
+                        <div class="project-card-body">
+                            <h4>AI Virtual Workout Counter Projects</h4>
+                            <p>A smart fitness assistant that detects and counts your workouts in real-time using your webcam! Features automatic workout classification for squats, push-ups, and bicep curls with real-time rep counting using pose estimation.</p>
+                            <div class="project-tech">Python, OpenCV, MediaPipe, Streamlit | 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+                <p>Let's connect and discuss opportunities in AI, Machine Learning, and Software Development</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Address</h4>
+                        <p>Thrissur, Kerala, India</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+918078824299">+91 8078824299</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:lenababu777@gmail.com">lenababu777@gmail.com</a></p>
+                    </div>
+                </div>
+				
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Send Message</h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group mb-3">
+                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>&copy; 2024 Lena Babu. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #e74c3c;"></i> for innovation</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.linkedin.com/in/lenababu" target="_blank" class="mr-3">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:lenababu777@gmail.com" class="mr-3">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+918078824299">
+                            <i class="fas fa-phone"></i>
+                        </a>
+						<a href="https://github.com/lenababu" target="_blank">
+    						<i class="fab fa-github"></i>
+						</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        $(document).ready(function() {
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 70
+                    }, 1000);
+                }
+            });
+
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Progress bar animation
+            function animateProgress() {
+                $('.progress-bar').each(function() {
+                    var width = $(this).css('width');
+                    $(this).css('width', '0%').animate({
+                        width: width
+                    }, 2000);
+                });
+            }
+
+            // Trigger progress animation when skills section is in view
+            var skillsSection = $('#skills');
+            var skillsAnimated = false;
+
+            $(window).scroll(function() {
+                var scrollTop = $(window).scrollTop();
+                var skillsTop = skillsSection.offset().top;
+                var windowHeight = $(window).height();
+
+                if (scrollTop + windowHeight > skillsTop + 100 && !skillsAnimated) {
+                    animateProgress();
+                    skillsAnimated = true;
+                }
+            });
