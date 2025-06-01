@@ -725,29 +725,58 @@
                 <div class="col-lg-8 mx-auto">
                     <div class="contact-form">
                         <h3 class="mb-4">Send Message</h3>
-                        <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Your Name" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group mb-3">
-                                        <input type="email" class="form-control" placeholder="Your Email" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="text" class="form-control" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                            </div>
-                        </form>
+                        <form name="contact" method="POST" netlify id="contactForm">
+  <input type="hidden" name="form-name" value="contact" />
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group mb-3">
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          placeholder="Your Name"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group mb-3">
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="Your Email"
+          required
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <input
+      type="text"
+      name="subject"
+      class="form-control"
+      placeholder="Subject"
+      required
+    />
+  </div>
+
+  <div class="form-group mb-3">
+    <textarea
+      name="message"
+      class="form-control"
+      rows="5"
+      placeholder="Your Message"
+      required
+    ></textarea>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+  </div>
+</form>
                     </div>
                 </div>
             </div>
